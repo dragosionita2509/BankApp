@@ -1,35 +1,33 @@
 package BrainBank.AccountType;
 
 import BrainBank.CardSystem.Card;
+import BrainBank.ServiceSystem.Transaction;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class CurrentAccount implements Account {
-    private static int accountNumber;
+    private static int currentCount;
     private final String IBAN;
     private float balance;
-    private float withdrawLimit;
-    private ArrayList <Card> cards;
-    private String openingDate;
-    private String expirationDate;
+    private final String openingDate;
     private String currency;
+    private ArrayList<Transaction> transactions;
 
-    public CurrentAccount(String IBAN, float balance, float withdrawLimit, ArrayList<Card> cards, String openingDate, String expirationDate, String currency) {
+    public CurrentAccount(String IBAN, float balance, String openingDate, String currency) {
         this.IBAN = IBAN;
         this.balance = balance;
-        this.withdrawLimit = withdrawLimit;
-        this.cards = cards;
         this.openingDate = openingDate;
-        this.expirationDate = expirationDate;
         this.currency = currency;
+        transactions = new ArrayList<Transaction>();
     }
 
-    public static int getAccountNumber() {
-        return accountNumber;
+    public static int getCurrentCount() {
+        return currentCount;
     }
 
-    public static void setAccountNumber(int accountNumber) {
-        CurrentAccount.accountNumber = accountNumber;
+    public static void setCurrentCount(int currentCount) {
+        CurrentAccount.currentCount = currentCount;
     }
 
     public String getIBAN() {
@@ -44,36 +42,8 @@ public class CurrentAccount implements Account {
         this.balance = balance;
     }
 
-    public float getWithdrawLimit() {
-        return withdrawLimit;
-    }
-
-    public void setWithdrawLimit(float withdrawLimit) {
-        this.withdrawLimit = withdrawLimit;
-    }
-
-    public ArrayList<Card> getCards() {
-        return cards;
-    }
-
-    public void setCards(ArrayList<Card> cards) {
-        this.cards = cards;
-    }
-
     public String getOpeningDate() {
         return openingDate;
-    }
-
-    public void setOpeningDate(String openingDate) {
-        this.openingDate = openingDate;
-    }
-
-    public String getExpirationDate() {
-        return expirationDate;
-    }
-
-    public void setExpirationDate(String expirationDate) {
-        this.expirationDate = expirationDate;
     }
 
     public String getCurrency() {
@@ -83,4 +53,52 @@ public class CurrentAccount implements Account {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
+
+    public void makeTransaction(CurrentAccount q, float amount, String date) {
+        if(this.balance<amount) System.out.println("Fonduri insuficiente");
+        else {
+            this.balance-=amount;
+            q.setBalance(q.getBalance()+amount);
+            Transaction p = new Transaction(this.getIBAN(),q.getIBAN(),date,amount);
+                transactions.add(p);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "CurrentAccount{" +
+                "IBAN='" + IBAN + '\'' +
+                ", balance=" + balance +
+                ", openingDate='" + openingDate + '\'' +
+                ", currency='" + currency + '\'' +
+                "\n. transactions='" + transactions +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CurrentAccount that = (CurrentAccount) o;
+        return Float.compare(that.balance, balance) == 0 && IBAN.equals(that.IBAN) && openingDate.equals(that.openingDate) && currency.equals(that.currency);
+    }
+
+
+    public void deposit(float amount) {
+        balance+=amount;
+    }
+
+    @Override
+    public AccountStatement Statement() {
+        if (this==null) return null;
+        else  {
+            AccountStatement AS = new AccountStatement(balance, openingDate, IBAN, transactions);
+            return AS;
+        }
+
+    }
+
+
+
+
 }
