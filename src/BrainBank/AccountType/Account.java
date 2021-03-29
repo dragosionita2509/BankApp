@@ -8,4 +8,5 @@ public interface Account {
 
     abstract void makeTransaction(CurrentAccount c,float f,String s);
 
+    abstract String getIBAN();
 }

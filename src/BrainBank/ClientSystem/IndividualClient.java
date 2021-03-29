@@ -4,16 +4,15 @@ import BrainBank.CardSystem.Card;
 
 import java.util.ArrayList;
 
-public class IndividualClient {
+public class IndividualClient extends UnregisteredClient {
 
-    private String CNP;
     private String first_name;
     private String last_name;
     private ArrayList<Card> cardList;
     private int age;
 
     public IndividualClient(String CNP, String first_name, String last_name, int age) {
-        this.CNP = CNP;
+        super(CNP);
         this.first_name = first_name;
         this.last_name = last_name;
         this.age = age;
