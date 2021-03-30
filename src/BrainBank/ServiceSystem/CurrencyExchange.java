@@ -1,11 +1,33 @@
 package BrainBank.ServiceSystem;
 
+import BrainBank.Location.Bank;
+
 public class CurrencyExchange implements OfflineService {
 
     private static float USDbuy = 4.07f;
     private static float USDsell = 4.27f;
     private static float EURbuy = 4.84f;
     private static float EURsell = 4.965f;
+    private Bank bank;
+    private String date;
+
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    @Override
+    public Bank getBank() {
+        return bank;
+    }
+
+    public void setBank(Bank bank) {
+        this.bank = bank;
+    }
 
     public static float getUSDbuy() {
         return USDbuy;
