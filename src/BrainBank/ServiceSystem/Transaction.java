@@ -55,6 +55,6 @@ public class Transaction implements OnlineService{
                 ", IBAN2='" + IBAN2 + '\'' +
                 ", transactionDate='" + transactionDate + '\'' +
                 ", amount=" + amount +
-                '}';
+                "}\n";
     }
 }

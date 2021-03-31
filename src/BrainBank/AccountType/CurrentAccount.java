@@ -71,8 +71,8 @@ public class CurrentAccount implements Account {
                 ", balance=" + balance +
                 ", openingDate='" + openingDate + '\'' +
                 ", currency='" + currency + '\'' +
-                "\n. transactions='" + transactions +
-                '}';
+                ", transactions='" + transactions +
+                "}";
     }
 
     @Override

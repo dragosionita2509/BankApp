@@ -78,7 +78,7 @@ public class SavingsAccount implements Account {
                 ", openingDate='" + openingDate + '\'' +
                 ", interestRate=" + interestRate +
                 ", currency='" + currency + '\'' +
-                '}';
+                "}";
     }
 
     @Override

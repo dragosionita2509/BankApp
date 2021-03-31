@@ -51,7 +51,6 @@ public class Withdrawal implements OfflineService{
         this.CNP = CNP;
     }
 
-    @Override
     public Bank getBank() {
         return bank;
     }

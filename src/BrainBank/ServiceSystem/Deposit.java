@@ -55,7 +55,6 @@ public class Deposit implements OfflineService {
         this.CNP = CNP;
     }
 
-    @Override
     public Bank getBank() {
         return bank;
     }

@@ -36,6 +36,11 @@ public class Bank {
         BankCount = bankCount;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Bank{" +
+                "title='" + title + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }

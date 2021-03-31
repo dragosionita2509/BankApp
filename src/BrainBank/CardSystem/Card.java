@@ -69,6 +69,6 @@ public class Card {
                 ", CVC=" + CVC +
                 ", pin=" + pin +
                 ", account=" + account +
-                '}';
+                "}\n";
     }
 }
