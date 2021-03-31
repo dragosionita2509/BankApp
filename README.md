@@ -1,6 +1,6 @@
 ## Application description
 
-  I created a Bank Management Application using java. The architecture of the project permits scaling as the classes are distributed into packages and they have multiple possibilities of creating more by inheriting.
+  I created a Bank Management Application using Java. The architecture of the project permits scaling as the classes are distributed into packages and they have multiple possibilities of creating more by inheriting.
   
   For example, I only implemented Individual clients, leaving future possibility of implementing a legal person. There are also possibilities for implementing more services as they inherit for interfaces(online and offline services).
   
