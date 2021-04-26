@@ -38,6 +38,8 @@ public class Main {
         Account Curr3 = new CurrentAccount("RO43BACX00154012231763372",6020, "25 MAR 2014", "RON");
         Account Savings3 = new SavingsAccount("RO65RZBR0000531921330225",69420,1,"18 DEC 2014", 0.6f, "RON");
 
+
+
         Card card1 = new Card("4462559698116632", "25 APR 2021",402,9952,Curr1);
         Card card2 = new Card("8261259699506632", "22 MAR 2017",162,1252,Curr2);
         Card card3 = new Card("5212255559506731", "22 JAN 2016",615,9912,Savings1);
@@ -53,7 +55,9 @@ public class Main {
         UnregisteredClient Cl4 = new IndividualClient("6000221166214","Opris","Marioara",56);
         UnregisteredClient Cl5 = new UnregisteredClient("5000926112675");
 
-        ((IndividualClient) Cl1).addCard(card1);
+
+
+        ((IndividualClient)Cl1).addCard(card1);
         ((IndividualClient)Cl1).addCard(card3);
         ((IndividualClient)Cl2).addCard(card2);
         ((IndividualClient)Cl2).addCard(card4);
