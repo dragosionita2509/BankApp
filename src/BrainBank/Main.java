@@ -6,9 +6,11 @@ import BrainBank.AccountType.SavingsAccount;
 import BrainBank.CardSystem.Card;
 import BrainBank.ClientSystem.IndividualClient;
 import BrainBank.ClientSystem.UnregisteredClient;
+import BrainBank.Files.WriterClass;
 import BrainBank.Location.Bank;
 import BrainBank.ServiceSystem.CurrencyExchange;
 import BrainBank.ServiceSystem.Loan;
+import BrainBank.ServiceSystem.Transaction;
 import com.sun.security.ntlm.Client;
 
 import java.util.*;
@@ -64,10 +66,13 @@ public class Main {
         ((IndividualClient)Cl3).addCard(card5);
         ((IndividualClient)Cl4).addCard(card6);
 
+
         ClientList.add(Cl1);
         ClientList.add(Cl2);
         ClientList.add(Cl3);
         ClientList.add(Cl4);
+        ClientList.add(Cl5);
+
         int x = 1;
         Iterator<UnregisteredClient> it = ClientList.iterator();
         while(it.hasNext())
@@ -92,6 +97,8 @@ public class Main {
         BankList.add(b4);
 
         Collections.sort(BankList,new SortByName());
+
+
 
        Iterator<Bank> It= BankList.iterator();
         x=1;
@@ -128,7 +135,12 @@ public class Main {
         System.out.println(ce1.EUR_RON(100));
         System.out.println(ce1.USD_RON(100));
 
+        System.out.println("\n-----------------------------------------------------------------------------\n\n");
 
+        WriterClass.getInstance().clientWriter(ClientList);
+        WriterClass.getInstance().cardWriter(ClientList);
+        WriterClass.getInstance().bankWriter(BankList);
+        WriterClass.getInstance().accountWriter(ClientList);
     }
 
 
