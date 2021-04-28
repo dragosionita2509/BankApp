@@ -11,7 +11,7 @@ public class SavingsAccount implements Account {
     private String currency;
 
 
-    public SavingsAccount(String IBAN, float balance, int withdrawLimit, String openingDate, float interestRate, String currency) {
+    public SavingsAccount(String IBAN, float balance, String openingDate, float interestRate, int withdrawLimit, String currency) {
         savingsCount++;
         this.balance = balance;
         this.withdrawLimit = withdrawLimit;

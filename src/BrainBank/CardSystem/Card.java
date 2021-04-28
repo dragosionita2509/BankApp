@@ -57,8 +57,8 @@ public class Card {
         return account;
     }
 
-    public void setAccount(CurrentAccount account) {
-        account = account;
+    public void setAccount(Account account) {
+        this.account = account;
     }
 
     @Override
