@@ -30,7 +30,7 @@ public class WriterClass {
         return instance;
     }
 
-    public static void bankWriter(ArrayList<Bank> bankList) {
+    public void bankWriter(ArrayList<Bank> bankList) {
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter("src\\BrainBank\\Files\\Resources\\Banks.csv");
@@ -52,7 +52,7 @@ public class WriterClass {
             }
     }
 
-    public static void clientWriter(ArrayList<UnregisteredClient> clientList) {
+    public void clientWriter(ArrayList<UnregisteredClient> clientList) {
 
         FileWriter fileWriter = null;
         try {
@@ -87,7 +87,7 @@ public class WriterClass {
         }
     }
 
-    public static void cardWriter(ArrayList<UnregisteredClient> clientList) {
+    public void cardWriter(ArrayList<UnregisteredClient> clientList) {
 
         FileWriter fileWriter = null;
         try {
@@ -124,7 +124,7 @@ public class WriterClass {
         }
     }
 
-    public static void accountWriter(ArrayList<UnregisteredClient> clientList) {
+    public void accountWriter(ArrayList<UnregisteredClient> clientList) {
 
         FileWriter fileWriter = null;
         try {

@@ -6,6 +6,7 @@ import BrainBank.AccountType.SavingsAccount;
 import BrainBank.CardSystem.Card;
 import BrainBank.ClientSystem.IndividualClient;
 import BrainBank.ClientSystem.UnregisteredClient;
+import BrainBank.Files.ReaderClass;
 import BrainBank.Files.WriterClass;
 import BrainBank.Location.Bank;
 import BrainBank.ServiceSystem.CurrencyExchange;
@@ -84,23 +85,15 @@ public class Main {
 
         System.out.println("\n-----------------------------------------------------------------------------\n\n");
 
-        Bank b1 = new Bank("Banca Bogatilor", "Strada Banilor fara numar");
-        Bank b2 = new Bank("Banca Saracilor", "Strada Saraciei 100");
-        Bank b3 = new Bank("Banca Intelectualilor", "Strada Intelectului 1");
-        Bank b4 = new Bank("Banca Geniilor", "Strada Dragos 5");
+        ArrayList <Bank> bankList = new ArrayList<Bank>();
+        
+        ReaderClass.getInstance().readerBank(bankList);
 
-        ArrayList<Bank> BankList = new ArrayList<Bank>();
-
-        BankList.add(b1);
-        BankList.add(b2);
-        BankList.add(b3);
-        BankList.add(b4);
-
-        Collections.sort(BankList,new SortByName());
+        Collections.sort(bankList,new SortByName());
 
 
 
-       Iterator<Bank> It= BankList.iterator();
+       Iterator<Bank> It= bankList.iterator();
         x=1;
        while(It.hasNext()) {
            System.out.println("Banca " +x +"  " + It.next());
@@ -139,7 +132,7 @@ public class Main {
 
         WriterClass.getInstance().clientWriter(ClientList);
         WriterClass.getInstance().cardWriter(ClientList);
-        WriterClass.getInstance().bankWriter(BankList);
+        WriterClass.getInstance().bankWriter(bankList);
         WriterClass.getInstance().accountWriter(ClientList);
     }
 
