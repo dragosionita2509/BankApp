@@ -11,6 +11,7 @@ import BrainBank.Location.Bank;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -168,11 +169,13 @@ public class WriterClass {
     public void logsWriter(String actionName) {
         FileWriter fileWriter = null;
         try {
-            Date today = new Date();
-            fileWriter = new FileWriter("src\\BrainBank\\Files\\Resources\\Logs\\Logs.csv");
+            fileWriter = new FileWriter("src\\BrainBank\\Files\\Logs\\Logs.csv",true);
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+            String time = sdf.format(timestamp);
                 fileWriter.append(actionName);
                 fileWriter.append(",");
-                fileWriter.append(String.valueOf(today));
+                fileWriter.append(time);
                 fileWriter.append("\n");
         } catch (Exception e) {
             System.out.println("Eroare in CsvWriter(Logs)");

@@ -36,4 +36,13 @@ public class Loan implements OnlineService{
     public void setMonthlySum(float monthlySum) {
         this.monthlySum = monthlySum;
     }
+
+    @Override
+    public String toString() {
+        return "Loan{" +
+                "startingDate='" + startingDate + '\'' +
+                ", instalments=" + instalments +
+                ", monthlySum=" + monthlySum +
+                '}';
+    }
 }

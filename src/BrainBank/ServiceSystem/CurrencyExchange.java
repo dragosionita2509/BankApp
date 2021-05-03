@@ -42,32 +42,32 @@ public class CurrencyExchange implements OfflineService {
         CurrencyExchange.EURsell = EURsell;
     }
 
-    public float RON_EUR(float val) {
+    public static float RON_EUR(float val) {
         float res = val/EURsell;
         return res;
     }
 
-    public float RON_USD(float val) {
+    public static float RON_USD(float val) {
         float res = val/USDsell;
         return res;
     }
 
-    public float EUR_RON(float val) {
+    public static  float EUR_RON(float val) {
         float res = val*EURbuy;
         return res;
     }
 
-    public float USD_RON(float val) {
+    public static float USD_RON(float val) {
         float res = val*USDbuy;
         return res;
     }
 
-    public float USD_EUR(float val) {
+    public static float USD_EUR(float val) {
         float res = USDbuy/EURbuy;
         return res;
     }
 
-    public float EUR_USD(float val) {
+    public static float EUR_USD(float val) {
         float res = EURbuy/USDbuy;
         return res;
     }
