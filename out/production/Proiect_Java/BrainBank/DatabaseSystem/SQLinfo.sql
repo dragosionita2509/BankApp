@@ -28,22 +28,41 @@ constraint card_cvc_ck check(length(CVC) = 3),
 constraint card_pin_ck check(length(pin) = 4)
 );
 
-
 CREATE TABLE CURRENT_ACCOUNT(
 IBAN varchar(24) primary key,
+card_number varchar(30),
 balance float not null,
 opening_date varchar(30) not null,
 currency varchar(3) not null,
-card_number varchar(30),
 
 constraint ca_iban_len_ck check(length(iban) = 24),
 constraint ca_curr_ck check(currency in ('EUR','USD','RON'))
 );
 
-ALTER TABLE CURRENT_ACCOUNT 
-ADD CONSTRAINT 
+CREATE TABLE SAVINGS_ACCOUNT(
+IBAN varchar(24) primary key,
+card_number varchar(30),
+balance float not null,
+withdraw_limit int not null,
+opening_date varchar(30) not null,
+interest_rate float not null,
+currency varchar(3) not null,
+
+constraint sa_iban_len_ck check(length(iban) = 24),
+constraint sa_curr_ck check(currency in ('EUR','USD','RON'))
+);
+
+ALTER TABLE SAVINGS_ACCOUNT 
+ADD CONSTRAINT sa_card
 foreign key(card_number)
 references card(card_number) on delete cascade;
+
+
+ALTER TABLE CURRENT_ACCOUNT 
+ADD CONSTRAINT fk_ca_card
+foreign key(card_number)
+references card(card_number) on delete cascade;
+
 
 ALTER TABLE CARD
 ADD CONSTRAINT fk_card_client

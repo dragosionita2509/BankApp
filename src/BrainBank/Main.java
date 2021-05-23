@@ -6,7 +6,9 @@ import BrainBank.AccountType.SavingsAccount;
 import BrainBank.CardSystem.Card;
 import BrainBank.ClientSystem.IndividualClient;
 import BrainBank.ClientSystem.UnregisteredClient;
+import BrainBank.DatabaseSystem.DeleteFunctions;
 import BrainBank.DatabaseSystem.InsertFunctions;
+import BrainBank.DatabaseSystem.ReadFunctions;
 import BrainBank.Files.ReaderClass;
 import BrainBank.Files.WriterClass;
 import BrainBank.Location.Bank;
@@ -33,21 +35,28 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        ArrayList<UnregisteredClient> clientList = new ArrayList<UnregisteredClient>();
+        ArrayList<IndividualClient> clientList = new ArrayList<IndividualClient>();
         ArrayList<Bank> bankList = new ArrayList<Bank>();
 
 
         InsertFunctions ins = new InsertFunctions();
+        ReadFunctions read = new ReadFunctions();
+        DeleteFunctions delete = new DeleteFunctions();
         IndividualClient client1 = new IndividualClient("5000824355012","Petrache","Andrei-Marius",24);
         Account acc1 = new CurrentAccount("RO90BACX0000001731067002",500806.0f,"25 FEB 2004","RON");
         Account acc2 = new SavingsAccount("RO45RZBR0000531921335683",4250.0f,"9 JAN 2005",0.2f,1,"EUR");
         Card card1 = new Card("4491251699134462","29 APR 2023",215,9955,acc1);
         Card card2 = new Card("9986112355981106","5 NOV 2021",449,1234,acc2);
 
-        ins.InsertSavingsAccount((SavingsAccount) acc2,card2);
+        read.readBank(bankList);
+        read.readClient(clientList);
+        read.readCard(clientList);
+        read.readCurrentAccount(clientList);
+        read.readSavingsAccount(clientList);
 
 
-
+        System.out.println(bankList);
+        System.out.println(clientList);
 
 
     }

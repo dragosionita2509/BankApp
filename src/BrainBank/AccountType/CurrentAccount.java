@@ -8,9 +8,9 @@ import java.util.Objects;
 
 public class CurrentAccount implements Account {
     private static int currentCount;
-    private final String IBAN;
+    private String IBAN;
     private float balance;
-    private final String openingDate;
+    private String openingDate;
     private String currency;
     private ArrayList<Transaction> transactions;
 
@@ -20,6 +20,10 @@ public class CurrentAccount implements Account {
         this.openingDate = openingDate;
         this.currency = currency;
         transactions = new ArrayList<Transaction>();
+    }
+
+    public CurrentAccount() {
+
     }
 
     public static int getCurrentCount() {
@@ -52,6 +56,22 @@ public class CurrentAccount implements Account {
 
     public void setCurrency(String currency) {
         this.currency = currency;
+    }
+
+    public void setIBAN(String IBAN) {
+        this.IBAN = IBAN;
+    }
+
+    public void setOpeningDate(String openingDate) {
+        this.openingDate = openingDate;
+    }
+
+    public ArrayList<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(ArrayList<Transaction> transactions) {
+        this.transactions = transactions;
     }
 
     public void makeTransaction(CurrentAccount q, float amount, String date) {

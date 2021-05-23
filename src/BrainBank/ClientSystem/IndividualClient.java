@@ -19,6 +19,11 @@ public class IndividualClient extends UnregisteredClient {
         cardList = new ArrayList<Card>();
     }
 
+    public IndividualClient() {
+        super();
+        cardList = new ArrayList<Card>();
+    }
+
     public String getCNP() {
         return CNP;
     }

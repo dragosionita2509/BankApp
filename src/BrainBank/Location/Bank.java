@@ -6,6 +6,8 @@ public class Bank {
     private String address;
     private static int BankCount;
 
+
+
     public Bank(String title, String address) {
         BankCount++;
         this.title = title;

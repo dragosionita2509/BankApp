@@ -21,6 +21,9 @@ public class Card {
         this.account = account;
     }
 
+    public Card() {
+    }
+
     public String getCardNumber() {
         return cardNumber;
     }

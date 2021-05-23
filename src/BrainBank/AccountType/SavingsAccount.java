@@ -3,10 +3,10 @@ package BrainBank.AccountType;
 public class SavingsAccount implements Account {
 
     private static int savingsCount;
-    private final String IBAN;
+    private String IBAN;
     private float balance;
     private int withdrawLimit;
-    private final String openingDate;
+    private String openingDate;
     private float interestRate;
     private String currency;
 
@@ -21,12 +21,29 @@ public class SavingsAccount implements Account {
         this.currency = currency;
     }
 
+    public SavingsAccount() {
+
+    }
+
     public static int getSavingsCount() {
         return savingsCount;
     }
 
     public static void setSavingsCount(int savingsCount) {
         SavingsAccount.savingsCount = savingsCount;
+    }
+
+    public void setIBAN(String IBAN) {
+        this.IBAN = IBAN;
+    }
+
+    public void setOpeningDate(String openingDate) {
+        this.openingDate = openingDate;
+    }
+
+    @Override
+    public String getIBAN() {
+        return IBAN;
     }
 
     public float getBalance() {
@@ -43,10 +60,6 @@ public class SavingsAccount implements Account {
 
     public void setWithdrawLimit(int withdrawLimit) {
         this.withdrawLimit = withdrawLimit;
-    }
-
-    public String getIBAN() {
-        return IBAN;
     }
 
     public String getOpeningDate() {

@@ -12,6 +12,9 @@ import java.util.ArrayList;
 
 public class InsertFunctions {
 
+    public InsertFunctions() {
+
+    }
 
     public void InsertBank(Bank bank)
     {

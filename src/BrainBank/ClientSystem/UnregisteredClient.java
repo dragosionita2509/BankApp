@@ -10,6 +10,9 @@ public class UnregisteredClient {
         this.CNP = CNP;
     }
 
+    public UnregisteredClient() {
+    }
+
     public String getCNP() {
         return CNP;
     }
