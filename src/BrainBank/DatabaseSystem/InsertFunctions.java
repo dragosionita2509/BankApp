@@ -20,7 +20,7 @@ public class InsertFunctions {
     {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "25092000d");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "12345678");
 
             String insertTitle = bank.getTitle();
             String insertAddress = bank.getAddress();
@@ -40,7 +40,7 @@ public class InsertFunctions {
     {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "25092000d");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "12345678");
 
             String insertCNP = client.getCNP();
             String insertFirstName = client.getFirst_name();
@@ -62,7 +62,7 @@ public class InsertFunctions {
     {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "25092000d");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "12345678");
 
             String insertCardNumber = card.getCardNumber();
             String insertExpirationDate = card.getExpirationDate();
@@ -86,7 +86,7 @@ public class InsertFunctions {
     {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "25092000d");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "12345678");
 
             String insertIBAN = account.getIBAN();
             String insertCardNumber = card.getCardNumber();
@@ -109,7 +109,7 @@ public class InsertFunctions {
     {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "25092000d");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "12345678");
 
             String insertIBAN = account.getIBAN();
             String insertCardNumber = card.getCardNumber();

@@ -19,7 +19,7 @@ public class DeleteFunctions {
     {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "25092000d");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "12345678");
             Statement statement = con.createStatement();
 
             String query = "DELETE FROM BANK WHERE title = " + "'" + bank.getTitle() + "'";
@@ -35,7 +35,7 @@ public class DeleteFunctions {
     {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "25092000d");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "12345678");
             Statement statement = con.createStatement();
 
             String query = "DELETE FROM CURRENT_ACCOUNT WHERE IBAN = " + "'" + account.getIBAN() + "'";
@@ -51,7 +51,7 @@ public class DeleteFunctions {
     {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "25092000d");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "12345678");
             Statement statement = con.createStatement();
 
             String query = "DELETE FROM SAVINGS_ACCOUNT WHERE IBAN = " + "'" + account.getIBAN() + "'";
@@ -67,7 +67,7 @@ public class DeleteFunctions {
     {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "25092000d");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "12345678");
             Statement statement = con.createStatement();
 
             String query = "DELETE FROM CARD WHERE CARD_NUMBER = " + "'" + card.getCardNumber() + "'";
@@ -83,7 +83,7 @@ public class DeleteFunctions {
     {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "25092000d");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "12345678");
             Statement statement = con.createStatement();
 
             String query = "DELETE FROM CLIENT WHERE CNP = " + "'" + client.getCNP() + "'";

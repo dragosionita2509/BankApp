@@ -17,7 +17,7 @@ public class ReadFunctions {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "25092000d");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "12345678");
 
             Statement statement = con.createStatement();
             ResultSet bankRes = statement.executeQuery("SELECT * FROM bank");
@@ -35,7 +35,7 @@ public class ReadFunctions {
     {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "25092000d");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "12345678");
 
             Statement statement = con.createStatement();
             ResultSet clientRes = statement.executeQuery("SELECT * FROM client");
@@ -57,7 +57,7 @@ public class ReadFunctions {
     {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "25092000d");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "12345678");
 
             Statement statement = con.createStatement();
             ResultSet cardRes = statement.executeQuery("SELECT * FROM card");
@@ -85,7 +85,7 @@ public class ReadFunctions {
     {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "25092000d");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "12345678");
 
             Statement statement = con.createStatement();
             ResultSet accountRes = statement.executeQuery("SELECT * FROM current_account");
@@ -113,7 +113,7 @@ public class ReadFunctions {
     {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "25092000d");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "12345678");
 
             Statement statement = con.createStatement();
             ResultSet accountRes = statement.executeQuery("SELECT * FROM savings_account");

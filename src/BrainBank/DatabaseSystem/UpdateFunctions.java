@@ -17,7 +17,7 @@ public class UpdateFunctions {
     {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "25092000d");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "12345678");
             Statement statement = con.createStatement();
 
             String query = "UPDATE BANK SET TITLE = '" + title + "' WHERE ADDRESS = '" + bank.getAddress() + "'";
@@ -33,7 +33,7 @@ public class UpdateFunctions {
     {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "25092000d");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "12345678");
             Statement statement = con.createStatement();
 
             String query = "UPDATE CARD SET PIN = '" + newPIN + "' WHERE PIN = '" + card.getPin() + "'";
@@ -49,7 +49,7 @@ public class UpdateFunctions {
     {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "25092000d");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "12345678");
             Statement statement = con.createStatement();
 
             String query = "UPDATE CURRENT_ACCOUNT SET BALANCE = '" + newBalance + "' WHERE IBAN = '" + account.getIBAN() + "'";
@@ -65,7 +65,7 @@ public class UpdateFunctions {
     {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "25092000d");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "12345678");
             Statement statement = con.createStatement();
 
             String query = "UPDATE SAVINGS_ACCOUNT SET BALANCE = '" + newBalance + "' WHERE IBAN = '" + account.getIBAN() + "'";
@@ -81,7 +81,7 @@ public class UpdateFunctions {
     {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "25092000d");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banksystem", "root", "12345678");
             Statement statement = con.createStatement();
 
             String query = "UPDATE SAVINGS_ACCOUNT SET INTEREST_RATE = '" + newInterestRate + "' WHERE IBAN = '" + account.getIBAN() + "'";
