@@ -51,14 +51,15 @@ public class Main {
         Card card2 = new Card("9986112355981106","5 NOV 2021",449,1234,acc2);
         Bank bank1 = new Bank("Banca smecherilor", "Strada nr 3");
 
-        ins.InsertBank(bank1);
+
         read.readBank(bankList);
         read.readClient(clientList);
         read.readCard(clientList);
         read.readCurrentAccount(clientList);
         read.readSavingsAccount(clientList);
 
-        update.updateBankTitle(bank1,"banca nevoilor");
+        update.updateSavingsAccountinterestRate((SavingsAccount) acc2,0.69f);
+
 
         System.out.println(bankList);
         System.out.println(clientList);
